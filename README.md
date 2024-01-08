@@ -1,24 +1,49 @@
-# README
+# テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Users テーブル
 
-Things you may want to cover:
+| Column             | Type       | Options                        |
+| ------------------ | ---------- | ------------------------------ |
+| nickname           | string     | null: false                    |
+| email              | string     | null: false, unique: true      |
+| encrypted_password | string     | null: false                    |
 
-* Ruby version
 
-* System dependencies
+### Association
 
-* Configuration
+- has_many :diagnoses
 
-* Database creation
 
-* Database initialization
+## Diagnoses テーブル
 
-* How to run the test suite
+| Column             | Type       | Options                        |
+| ------------------ | ---------- | ------------------------------ |
+| user               | references | null: false, foreign_key: true |
+| long_fingers       | boolean    | null: false                    |
+| thick_fingers      | boolean    | null: false                    |
+| finger_shape       | string     | null: false                    |
+| webbed_fingers     | boolean    | null: false                    |
+| ring_type          | string     | null: false                    |
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+### Association
 
-* ...
+- belongs_to :user
+
+
+## RecommendedRings テーブル
+
+| Column             | Type       | Options                        |
+| ------------------ | ---------- | ------------------------------ |
+| ring_type          | string     | null: false                    |
+| image              | string     | null: false                    |
+| description        | text       | null: false                    |
+
+
+
+
+
+
+
+
+
