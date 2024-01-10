@@ -91,9 +91,9 @@
       }
 
       body {
-        color: #8b4513; /* 焦茶色 */
+        color: #4e4e4e;
         font-family: 'Playfair Display', serif;
-        background-color: #f5fff5;
+        background-color: #fffff0;
       }
       /* 追加：全体を中央揃えにするスタイル */
       .centered-container {
@@ -174,35 +174,45 @@
 
     
 <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-  <header class="mb-auto">
+  <header class="mb-auto" style="background-color: #f5f5f5; color: #4e4e4e; text-align: center; padding: 1rem;">
     <div>
       <h3 class="float-md-start mb-0">user page</h3>
       <nav class="nav nav-masthead justify-content-center float-md-end">
         <% if user_signed_in? %>
-          <div class="nav__right">
-            <%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete }, class: "nav-link fw-bold py-1 px-0 active", style: 'color: #8b4513;' %>
-            <%= link_to current_user.nickname, root_path, class: "nav-link fw-bold py-1 px-0", style: 'color: #8b4513;' %>
+          <div class="nav__right d-flex align-items-center">
+            <%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete }, class: "nav-link fw-bold py-1 px-0 active", style: 'color: #4e4e4e;' %>
+            <%= link_to current_user.nickname, root_path, class: "nav-link fw-bold py-1 px-0", style: 'color: #4e4e4e;' %>
           </div>
         <% else %>
-          <div class="nav__right">
-            <%= link_to 'ログイン', new_user_session_path, class: 'nav-link fw-bold py-1 px-0 active', style: 'color: #8b4513;' %>
-            <%= link_to '新規登録', new_user_registration_path, class: 'nav-link fw-bold py-1 px-0', style: 'color: #8b4513;' %>
+          <div class="nav__right d-flex align-items-center">
+            <%= link_to 'ログイン', new_user_session_path, class: 'nav-link fw-bold py-1 px-0 active', style: 'color: #4e4e4e;' %>
+            <%= link_to '/新規登録', new_user_registration_path, class: 'nav-link fw-bold py-1 px-0', style: 'color: #4e4e4e;' %>
           </div>
         <% end %>
       </nav>
     </div>
   </header>
-  <main class="px-3">
+  <main class="px-3 text-center">
    <h1 style="font-size: 3rem; margin-bottom: 100px;">パーソナルハンド診断</h1>
       <p class="lead">
-        <a href="#" class="btn btn-lg btn-light fw-bold border-white bg-white" style="border-radius: 50px; padding: 20px 20px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gem" viewBox="0 0 16 16">
-  <path d="M3.1.7a.5.5 0 0 1 .4-.2h9a.5.5 0 0 1 .4.2l2.976 3.974c.149.185.156.45.01.644L8.4 15.3a.5.5 0 0 1-.8 0L.1 5.3a.5.5 0 0 1 0-.6l3-4zm11.386 3.785-1.806-2.41-.776 2.413 2.582-.003zm-3.633.004.961-2.989H4.186l.963 2.995 5.704-.006zM5.47 5.495 8 13.366l2.532-7.876-5.062.005zm-1.371-.999-.78-2.422-1.818 2.425 2.598-.003zM1.499 5.5l5.113 6.817-2.192-6.82L1.5 5.5zm7.889 6.817 5.123-6.83-2.928.002-2.195 6.828z"/>
-</svg> 診断スタート</a>
+        <a href="#" class="btn btn-lg btn-custom fw-bold" style="border-radius: 50px; padding: 20px 40px; background-color: #ffd1dc; color: #fff; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1); transition: 0.3s;">
+           診断スタート
+        </a>
       </p>
   </main>
 
-  <footer class="mt-auto text-white-50">
-    <p>Cover template for <a href="https://getbootstrap.com/" class="text-white">Bootstrap</a>, by <a href="https://twitter.com/mdo" class="text-white">@mdo</a>.</p>
+  <style>
+    .btn-custom:hover {
+       background-color: #ffe4e9; /* ホバー時のさらに明るいピンク */
+       color: #fff;
+       box-shadow: 0 6px 12px 0 rgba(0,0,0,0.15);
+    }
+  </style>
+
+  <footer class="mt-auto" style="background-color: #f5f5f5; color: #c6cacc; text-align: center; padding: 1rem;">
+            <!-- パーソナルハンド診断の文字 -->
+            <p>Personal Hand Diagnosis</p>
+     <%# <p>Cover template for <a href="https://getbootstrap.com/" class="text-white">Bootstrap</a>, by <a href="https://twitter.com/mdo" class="text-white">@mdo</a>.</p> %>
   </footer>
 </div>
 <%# <script src="../assets/dist/js/bootstrap.bundle.min.js"></script> %>
