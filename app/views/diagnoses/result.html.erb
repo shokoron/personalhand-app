@@ -1,0 +1,28 @@
+<style>
+  body {
+    background-color: #fffff0;
+    color: #4e4e4e;
+    font-family: 'Playfair Display', serif;
+  }
+
+  h1 {
+    color: #4e4e4e;
+  }
+</style>
+
+<div style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; width: 70%; margin-left: auto; margin-right: auto;">
+  <h1 style="margin-bottom: 80px;">診断結果</h1>
+
+  <% if @diagnosis_result == 'straight' %>
+    <p>ストレートタイプ</p>
+    <%= image_tag("straight_ring.jpg") %>
+  <% elsif @diagnosis_result == 'wave' %>
+    <p>ウェーブタイプ</p>
+    <%= image_tag("wave_ring.jpg") %>
+  <% elsif @diagnosis_result == 'v_shape' %>
+    <p>V字タイプ</p>
+    <%= image_tag("v_shape_ring.jpg") %>
+  <% else %>
+    <p>診断結果が見つかりませんでした。</p>
+  <% end %>
+</div>

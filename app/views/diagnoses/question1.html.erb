@@ -1,0 +1,21 @@
+<style>
+  body {
+    background-color: #fffff0;
+    color: #4e4e4e;
+    font-family: 'Playfair Display', serif;
+  }
+
+  h1 {
+    color: #4e4e4e;
+  }
+</style>
+
+
+<div style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; width: 70%; margin-left: auto; margin-right: auto;">
+  <h1 style="margin-bottom: 80px;">質問1: あなたの指は長いですか、それとも短いですか？</h1>
+
+  <div style="display: flex; justify-content: center; align-items: center;">
+    <%= link_to image_tag("long_fingers.jpg", width: "500", height: "500"), question2_diagnoses_path(long_fingers: true), style: "margin-right: 20px;" %>
+    <%= link_to image_tag("short_fingers.jpg", width: "500", height: "500"), question2_diagnoses_path(long_fingers: false) %>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<style>
+  body {
+    background-color: #fffff0;
+    color: #4e4e4e;
+    font-family: 'Playfair Display', serif;
+  }
+
+  h1 {
+    color: #4e4e4e;
+  }
+</style>
+
+<div style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; width: 70%; margin-left: auto; margin-right: auto;">
+  <h1 style="margin-bottom: 80px;">質問3: あなたの指の形は円錐型(指の根元が一番ボリュームがある)ですか？それとも関節型(関節が張っている)ですか？</h1>
+
+  <div style="display: flex; justify-content: center; align-items: center;">
+    <%= link_to image_tag("conical_shape.jpg", width: "500", height: "500"), question4_diagnoses_path(
+      finger_shape: 'conical',
+      long_fingers: @long_fingers,
+      thick_fingers: @thick_fingers
+    ), style: "margin-right: 20px;" %>
+    <%= link_to image_tag("jointed_shape.jpg", width: "500", height: "500"), question4_diagnoses_path(
+      finger_shape: 'jointed',
+      long_fingers: @long_fingers,
+      thick_fingers: @thick_fingers
+    ) %>
+  </div>
+</div>

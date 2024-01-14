@@ -6,7 +6,7 @@ class CreateDiagnoses < ActiveRecord::Migration[7.0]
       t.boolean :thick_fingers,        null: false
       t.string :finger_shape,          null: false
       t.boolean :webbed_fingers,       null: false
-      t.string :ring_type,             null: false
+      t.string :ring_type,             default: '', null: true
       t.timestamps
     end
   end

@@ -23,7 +23,6 @@
 | thick_fingers      | boolean    | null: false                    |
 | finger_shape       | string     | null: false                    |
 | webbed_fingers     | boolean    | null: false                    |
-| ring_type          | string     | null: false                    |
 
 
 ### Association
