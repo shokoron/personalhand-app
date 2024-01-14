@@ -10,19 +10,37 @@
   }
 </style>
 
-<div style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; width: 70%; margin-left: auto; margin-right: auto;">
-  <h1 style="margin-bottom: 80px;">診断結果</h1>
+<div>
+  <h2 style="text-align: center; margin-top: 20px;">・・・診断結果・・・</h2>
 
   <% if @diagnosis_result == 'straight' %>
-    <p>ストレートタイプ</p>
-    <%= image_tag("straight_ring.jpg") %>
+    <p style="text-align: center; margin: 20px auto 5px;">あなたに似合うタイプは・・・</p>
+    <h1 style="text-align: center; color: #0080ff;">『 ストレートタイプ 』</h1>
+    <p style="margin: 50px auto 0; width: 50%; text-align: center; font-size: 18px; line-height: 2.0;">
+       ストレートタイプの指輪は、新円で丸く癖のない形状をしています。<br>
+       指が長い方や関節が目立つ指の方は、根元にストレートの直線ラインがくることで、<br>
+       関節と指の根元とのバランスがとれて指が綺麗に見えやすいと言われています。
+    </p>
+    <%= image_tag("straight_ring.jpg", style: "display: block; margin: 0 auto 30px;") %>
   <% elsif @diagnosis_result == 'wave' %>
-    <p>ウェーブタイプ</p>
-    <%= image_tag("wave_ring.jpg") %>
+    <p style="text-align: center; margin: 20px auto 5px;">あなたに似合うタイプは・・・</p>
+    <h1 style="text-align: center; color: #ff69b4;">『 ウェーブタイプ 』</h1>
+    <p style="margin: 50px auto 0; width: 50%; text-align: center; font-size: 18px; line-height: 2.0;">
+       ウェーブタイプの指輪は、左手の薬指の付け根が小指に向かって下るような形状をしています。<br>
+       指にボリュームがあるのを気にされている方や、水かきが目立たない方は指の形状に<br>
+       フィットしやすく、より指の形を綺麗に見せてくれます。
+    </p>
+    <%= image_tag("wave_ring.jpg", style: "display: block; margin: 0 auto 30px;") %>
   <% elsif @diagnosis_result == 'v_shape' %>
-    <p>V字タイプ</p>
-    <%= image_tag("v_shape_ring.jpg") %>
+    <p style="text-align: center; margin: 20px auto 5px;">あなたに似合うタイプは・・・</p>
+    <h1 style="text-align: center; color: #008000;">『 V字タイプ 』</h1>
+    <p style="margin: 50px auto 0; width: 50%; text-align: center; font-size: 18px; line-height: 2.0;">
+       V字の指輪は、名前の通りアルファベットのVのような形状をしています。<br>
+       このVのラインは、指の付け根から先までの距離が長く見えるため、指長効果があると言われています。<br>
+       指のボリュームや短さを気にされている方には、指をシャープに見せてくれる効果があります。
+    </p>    
+    <%= image_tag("v_shape_ring.jpg", style: "display: block; margin: 0 auto 30px;") %>
   <% else %>
-    <p>診断結果が見つかりませんでした。</p>
+    <p style="text-align: center; margin-top: 50px;">診断結果が見つかりませんでした。</p>
   <% end %>
 </div>
