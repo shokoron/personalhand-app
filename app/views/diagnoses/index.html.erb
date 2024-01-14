@@ -191,7 +191,7 @@
         <% if user_signed_in? %>
           <div class="nav__right d-flex align-items-center">
             <%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete }, class: "nav-link fw-bold py-1 px-0 active", style: 'color: #4e4e4e;' %>
-            <%= link_to current_user.nickname, root_path, class: "nav-link fw-bold py-1 px-0", style: 'color: #4e4e4e;' %>
+            <%= link_to "/#{current_user.nickname}", root_path, class: "nav-link fw-bold py-1 px-0", style: 'color: #4e4e4e;' %>
           </div>
         <% else %>
           <div class="nav__right d-flex align-items-center">

@@ -86,24 +86,24 @@ class DiagnosesController < ApplicationController
       'v_shape' # パターン７
     when !diagnosis.long_fingers? && !diagnosis.thick_fingers? && diagnosis.finger_shape == "conical" && diagnosis.webbed_fingers?
       'v_shape' # パターン８
-    when diagnosis.long_fingers? && diagnosis.thick_fingers? && !diagnosis.finger_shape == "conical" && !diagnosis.webbed_fingers?
+    when diagnosis.long_fingers? && diagnosis.thick_fingers? && !(diagnosis.finger_shape == "conical") && !diagnosis.webbed_fingers?
       'straight' # パターン９
-    when diagnosis.long_fingers? && !diagnosis.thick_fingers? && !diagnosis.finger_shape == "conical" && !diagnosis.webbed_fingers?
+    when diagnosis.long_fingers? && !diagnosis.thick_fingers? && !(diagnosis.finger_shape == "conical") && !diagnosis.webbed_fingers?
       'straight' # パターン１０
-    when diagnosis.long_fingers? && diagnosis.thick_fingers? && !diagnosis.finger_shape == "conical" && diagnosis.webbed_fingers?
+    when diagnosis.long_fingers? && diagnosis.thick_fingers? && !(diagnosis.finger_shape == "conical") && diagnosis.webbed_fingers?
       'straight' # パターン１１
-    when diagnosis.long_fingers? && !diagnosis.thick_fingers? && !diagnosis.finger_shape == "conical" && diagnosis.webbed_fingers?
+    when diagnosis.long_fingers? && !diagnosis.thick_fingers? && !(diagnosis.finger_shape == "conical") && diagnosis.webbed_fingers?
       'straight' # パターン１２
-    when !diagnosis.long_fingers? && diagnosis.thick_fingers? && !diagnosis.finger_shape == "conical" && !diagnosis.webbed_fingers?
+    when !diagnosis.long_fingers? && diagnosis.thick_fingers? && !(diagnosis.finger_shape == "conical") && !diagnosis.webbed_fingers?
       'straight' # パターン１３
-    when !diagnosis.long_fingers? && !diagnosis.thick_fingers? && !diagnosis.finger_shape == "conical" && !diagnosis.webbed_fingers?
+    when !diagnosis.long_fingers? && !diagnosis.thick_fingers? && !(diagnosis.finger_shape == "conical") && !diagnosis.webbed_fingers?
       'straight' # パターン１４
-    when !diagnosis.long_fingers? && diagnosis.thick_fingers? && !diagnosis.finger_shape == "conical" && diagnosis.webbed_fingers?
+    when !diagnosis.long_fingers? && diagnosis.thick_fingers? && !(diagnosis.finger_shape == "conical") && diagnosis.webbed_fingers?
       'straight' # パターン１５
-    when !diagnosis.long_fingers? && !diagnosis.thick_fingers? && !diagnosis.finger_shape == "conical" && diagnosis.webbed_fingers?
+    when !diagnosis.long_fingers? && !diagnosis.thick_fingers? && !(diagnosis.finger_shape == "conical") && diagnosis.webbed_fingers?
       'straight' # パターン１６
     else
-      'unknown' # どの条件にも該当しない場合
+      'unknown'
     end
   end
 end
