@@ -1,4 +1,5 @@
 class DiagnosesController < ApplicationController
+  before_action :authenticate_user!, except: [:index]
 
   def index
   end
@@ -60,6 +61,12 @@ class DiagnosesController < ApplicationController
   end
 
   private
+  def authenticate_user!
+    unless current_user
+      flash[:alert] = "ログインが必要です。"
+      redirect_to new_user_session_path
+    end
+  end
 
   def calculate_result(diagnosis)
     case
