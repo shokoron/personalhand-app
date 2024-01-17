@@ -1,1 +1,89 @@
-<h1>ユーザー詳細</h1>
+<style>
+  body {
+    background-color: #fffff0;
+    color: #4e4e4e;
+    font-family: 'Playfair Display', serif;
+  }
+
+  .page-header {
+  text-align: center;
+  color: #4e4e4e;
+  margin-top: 20px;
+  margin-bottom: 70px;
+  font-weight: bold;
+  }
+
+  .recommendation-section {
+    text-align: center;
+    margin: 20px auto;
+    width: 50%;
+  }
+
+  .recommendation-section h1 {
+    color: #0080ff;
+  }
+
+  .recommendation-section p {
+    font-size: 18px;
+    line-height: 2.0;
+    text-align: left;
+    margin-top: 20px;
+  }
+
+  .recommendation-image {
+    display: block;
+    margin: 30px auto 30px;
+  }
+
+  h1.straight-type-title {
+    color: #0080ff; /* ストレートタイプの色 */
+  }
+
+  h1.wave-type-title {
+    color: #ff69b4; /* ウェーブタイプの色 */
+  }
+
+  h1.vshape-type-title {
+    color: #008000; /* V字タイプの色 */
+  }
+</style>
+
+<h1 class="page-header">・・・ <%= @user.nickname %>さんの診断結果ページ ・・・</h1>
+
+<div class="recommendation-section">
+  <% if @latest_diagnosis.present? %>
+    <% case @diagnosis_result %>
+    <% when 'straight' %>
+      <h1 class="straight-type-title">『 ストレートタイプ 』</h1>
+      <p>
+        ストレートタイプの指輪は、新円で丸く癖のない形状をしています。<br>
+        指が長い方や関節が目立つ指の方は、根元にストレートの直線ラインがくることで、<br>
+        関節と指の根元とのバランスがとれて指が綺麗に見えやすいと言われています。
+      </p>
+      <%= link_to 'おすすめのデザインはこちら', recommended_ring_path('straight'), class: 'btn btn-primary btn-lg rounded-pill my-4' %>
+      <%= image_tag("straight_ring.jpg", class: "recommendation-image") %>
+
+    <% when 'wave' %>
+      <h1 class="wave-type-title">『 ウェーブタイプ 』</h1>
+      <p>
+        ウェーブタイプの指輪は、左手の薬指の付け根が小指に向かって下るような形状をしています。<br>
+        指にボリュームがある方や、水かきが目立たない方は指の形状にフィットしやすく、<br>
+        より指の形を綺麗に見せてくれます。
+      </p>
+      <%= link_to 'おすすめのデザインはこちら', recommended_ring_path('wave'), class: 'btn btn-primary btn-lg rounded-pill my-4' %>
+      <%= image_tag("wave_ring.jpg", class: "recommendation-image") %>
+
+    <% when 'v_shape' %>
+      <h1 class="vshape-type-title">『 V字タイプ 』</h1>
+      <p>
+        V字タイプの指輪は、名前の通りアルファベットのVのような形状をしています。<br>
+        このVのラインは、指の付け根から先までの距離が長く見えるため、指長効果があると言われています。<br>
+        指のボリュームや短さを気にされている方には、指をシャープに見せてくれる効果があります。
+      </p>
+      <%= link_to 'おすすめのデザインはこちら', recommended_ring_path('v_shape'), class: 'btn btn-primary btn-lg rounded-pill my-4' %>
+      <%= image_tag("v_shape_ring.jpg", class: "recommendation-image") %>
+    <% else %>
+      <p>診断結果はありません。</p>
+    <% end %>
+ <% end %>
+</div>
