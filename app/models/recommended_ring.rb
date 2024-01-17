@@ -1,0 +1,2 @@
+class RecommendedRing < ApplicationRecord
+end

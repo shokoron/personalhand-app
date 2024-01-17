@@ -1,0 +1,2 @@
+module RecommendedRingsHelper
+end

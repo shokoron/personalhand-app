@@ -35,8 +35,8 @@
 | Column             | Type       | Options                        |
 | ------------------ | ---------- | ------------------------------ |
 | ring_type          | string     | null: false                    |
-| image              | string     | null: false                    |
-| description        | text       | null: false                    |
+
+
 
 
 

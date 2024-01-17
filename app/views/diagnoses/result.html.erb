@@ -7,40 +7,84 @@
 
   h1 {
     color: #4e4e4e;
+    font-weight: bold;
   }
+
+  .recommendation-section {
+    text-align: center;
+    margin: 20px auto;
+    width: 50%;
+  }
+
+  .recommendation-section p {
+    font-size: 18px;
+    line-height: 2.0;
+    margin-top: 20px;
+  }
+
+  .left-aligned {
+    text-align: left;
+  }
+
+  .recommendation-image {
+    display: block;
+    margin: 30px auto 30px;
+  }
+
+  .straight-type-title {
+    color: #0080ff; /* ストレートタイプの色 */
+  }
+
+  .wave-type-title {
+    color: #ff69b4; /* ウェーブタイプの色 */
+  }
+
+  .vshape-type-title {
+    color: #008000; /* V字タイプの色 */
+  }
+
 </style>
 
 <div>
-  <h2 style="text-align: center; margin-top: 20px;">・・・診断結果・・・</h2>
+  <h2 style="text-align: center; margin-top: 20px; margin-bottom: 50px;">  ・・・ 診断結果 ・・・</h2>
 
   <% if @diagnosis_result == 'straight' %>
-    <p style="text-align: center; margin: 20px auto 5px;">あなたに似合うタイプは・・・</p>
-    <h1 style="text-align: center; color: #0080ff;">『 ストレートタイプ 』</h1>
-    <p style="margin: 50px auto 0; width: 50%; text-align: center; font-size: 18px; line-height: 2.0;">
-       ストレートタイプの指輪は、新円で丸く癖のない形状をしています。<br>
-       指が長い方や関節が目立つ指の方は、根元にストレートの直線ラインがくることで、<br>
-       関節と指の根元とのバランスがとれて指が綺麗に見えやすいと言われています。
-    </p>
-    <%= image_tag("straight_ring.jpg", style: "display: block; margin: 0 auto 30px;") %>
+    <div class="recommendation-section">
+      <p><%= current_user.nickname %>さんに似合うタイプは・・・</p>
+      <h1 class="straight-type-title">『 ストレートタイプ 』</h1>
+      <p class="left-aligned">
+        ストレートタイプの指輪は、新円で丸く癖のない形状をしています。<br>
+        指が長い方や関節が目立つ指の方は、根元にストレートの直線ラインがくることで、<br>
+        関節と指の根元とのバランスがとれて指が綺麗に見えやすいと言われています。
+      </p>
+      <%= link_to 'おすすめのデザインはこちら', recommended_ring_path('straight'), class: 'btn btn-primary btn-lg rounded-pill my-4' %>
+      <%= image_tag("straight_ring.jpg", class: "recommendation-image") %>
+    </div>
   <% elsif @diagnosis_result == 'wave' %>
-    <p style="text-align: center; margin: 20px auto 5px;">あなたに似合うタイプは・・・</p>
-    <h1 style="text-align: center; color: #ff69b4;">『 ウェーブタイプ 』</h1>
-    <p style="margin: 50px auto 0; width: 50%; text-align: center; font-size: 18px; line-height: 2.0;">
-       ウェーブタイプの指輪は、左手の薬指の付け根が小指に向かって下るような形状をしています。<br>
-       指にボリュームがあるのを気にされている方や、水かきが目立たない方は指の形状に<br>
-       フィットしやすく、より指の形を綺麗に見せてくれます。
-    </p>
-    <%= image_tag("wave_ring.jpg", style: "display: block; margin: 0 auto 30px;") %>
+    <div class="recommendation-section">
+      <p><%= current_user.nickname %>さんに似合うタイプは・・・</p>
+      <h1 class="wave-type-title">『 ウェーブタイプ 』</h1>
+      <p class="left-aligned">
+        ウェーブタイプの指輪は、左手の薬指の付け根が小指に向かって下るような形状をしています。<br>
+        指にボリュームがあるのを気にされている方や、水かきが目立たない方は指の形状に<br>
+        フィットしやすく、より指の形を綺麗に見せてくれます。
+      </p>
+      <%= link_to 'おすすめのデザインはこちら', recommended_ring_path('wave'), class: 'btn btn-primary btn-lg rounded-pill my-4' %>
+      <%= image_tag("wave_ring.jpg", class: "recommendation-image") %>
+    </div>
   <% elsif @diagnosis_result == 'v_shape' %>
-    <p style="text-align: center; margin: 20px auto 5px;">あなたに似合うタイプは・・・</p>
-    <h1 style="text-align: center; color: #008000;">『 V字タイプ 』</h1>
-    <p style="margin: 50px auto 0; width: 50%; text-align: center; font-size: 18px; line-height: 2.0;">
-       V字の指輪は、名前の通りアルファベットのVのような形状をしています。<br>
-       このVのラインは、指の付け根から先までの距離が長く見えるため、指長効果があると言われています。<br>
-       指のボリュームや短さを気にされている方には、指をシャープに見せてくれる効果があります。
-    </p>    
-    <%= image_tag("v_shape_ring.jpg", style: "display: block; margin: 0 auto 30px;") %>
+    <div class="recommendation-section">
+      <p><%= current_user.nickname %>さんに似合うタイプは・・・</p>
+      <h1 class="vshape-type-title">『 V字タイプ 』</h1>
+      <p class="left-aligned">
+        V字の指輪は、名前の通りアルファベットのVのような形状をしています。<br>
+        このVのラインは、指の付け根から先までの距離が長く見えるため、指長効果があると言われています。<br>
+        指のボリュームや短さを気にされている方には、指をシャープに見せてくれる効果があります。
+      </p>
+      <%= link_to 'おすすめのデザインはこちら', recommended_ring_path('v_shape'), class: 'btn btn-primary btn-lg rounded-pill my-4' %>
+      <%= image_tag("v_shape_ring.jpg", class: "recommendation-image") %>
+    </div>    
   <% else %>
     <p style="text-align: center; margin-top: 50px;">診断結果が見つかりませんでした。</p>
   <% end %>
-</div>
+</div> 

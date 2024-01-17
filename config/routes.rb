@@ -12,4 +12,6 @@ Rails.application.routes.draw do
       get 'result'
     end
   end
+
+  get 'recommended_rings/:ring_type', to: 'recommended_rings#show', as: :recommended_ring
 end

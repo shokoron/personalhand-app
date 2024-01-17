@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_01_13_135534) do
+ActiveRecord::Schema[7.0].define(version: 2024_01_15_105753) do
   create_table "diagnoses", charset: "utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.boolean "long_fingers", null: false
@@ -20,6 +20,12 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_13_135534) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_diagnoses_on_user_id"
+  end
+
+  create_table "recommended_rings", charset: "utf8", force: :cascade do |t|
+    t.string "ring_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", charset: "utf8", force: :cascade do |t|

@@ -1,0 +1,115 @@
+<style>
+  body {
+    background-color: #fffff0;
+    color: #4e4e4e;
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+  }
+
+  .recommendation-content {
+    margin: 0 auto;
+    width: 50%;
+  }
+
+  .recommendation-image {
+    width: 100%;
+    height: auto;
+  }
+
+  .text-large {
+    margin: 70px auto 30px;
+    font-size: 30px;
+  }
+
+  .text-medium {
+    font-size: 18px;
+    text-align: left;
+    line-height: 2.0;
+  }
+
+  .text-small {
+    font-size: 16px;
+  }
+
+</style>
+
+
+<h1>
+  <% case @ring_type %>
+  <% when 'straight' %>
+    〜 ストレートタイプ おすすめのデザイン 〜
+  <% when 'wave' %>
+    〜 ウェーブタイプ おすすめのデザイン 〜
+  <% when 'v_shape' %>
+    〜 V字タイプ おすすめのデザイン 〜
+  <% else %>
+    〜 おすすめのデザイン 〜
+  <% end %>
+</h1>
+
+<% case @ring_type %>
+<% when 'straight' %>
+  <div class="recommendation-content">
+    <h2 class="text-large">『 シンプルストレート 』</h2>
+    <p class="text-medium">
+      シンプルで上品な洗練されたデザインです。丸みを帯びた形状なので指あたりもよく付け心地抜群です。<br>
+      飽きがこない王道の結婚指輪らしい形なので、万人受けしやすいデザインです。
+    </p>
+    <%= image_tag 'simple_straight.jpg', class: 'recommendation-image' %>
+  </div>
+  <div class="recommendation-content">
+    <h2 class="text-large">『 華やかなストレート 』</h2>
+    <p class="text-medium">
+      華やかで目を引くデザインです。ゴールドのリングは富の象徴とも言われ、欧米では人気の金属です。<br>
+      幅が太いので存在感も出やすく重厚感や高級感を演出できます。
+    </p>
+    <%= image_tag 'fancy_straight.jpg', class: 'recommendation-image' %>
+  </div>
+  <div class="recommendation-content">
+    <h2 class="text-large">『 個性派ストレート 』</h2>
+    <p class="text-medium">
+      個性的で人と被りにくいデザインです。レディースリングにはピンクサファイアのアレンジが <br>
+      施されています。色石でカスタマイズしたり唯一無二のデザインにしたい方にはおすすめです。
+    </p>
+    <%= image_tag 'unique_straight.jpg', class: 'recommendation-image' %>
+  </div>
+<% when 'wave' %>
+  <div class="recommendation-content">
+    <h2 class="text-large">『 シンプルウェーブ 』</h2>
+    <p class="text-medium">
+      流れるような曲線が特徴のデザインです。人間の体は全て曲線でできているため曲線のウェーブリングは <br>
+      指に馴染みやすいと言われています。シンプルウェーブはよりナチュラルに着けたい方にはおすすめです。
+    </p>
+    <%= image_tag 'simple_wave.jpg', class: 'recommendation-image' %>
+  </div>
+  <div class="recommendation-content">
+    <h2 class="text-large">『 華やかウェーブ 』</h2>
+    <p class="text-medium">
+      華やかで目を引くデザインです。 <br>
+    </p>
+    <%= image_tag 'fancy_wave.jpg', class: 'recommendation-image' %>
+  </div>
+  <div class="recommendation-content">
+    <h2 class="text-large">『 個性派ウェーブ 』</h2>
+    <p class="text-medium">個性的で一風変わったデザインです。</p>
+    <%= image_tag 'unique_wave.jpg', class: 'recommendation-image' %>
+  </div>
+<% when 'v_shape' %>
+  <div class="recommendation-content">
+    <h2 class="text-large">『 シンプルV字 』</h2>
+    <p class="text-medium">V字スタイルのリングは、ユニークな形状が印象的です。</p>
+    <%= image_tag 'simple_v_shape.jpg', class: 'recommendation-image' %>
+  </div>
+  <div class="recommendation-content">
+    <h2 class="text-large">『 華やかV字 』</h2>
+    <p class="text-medium">華やかで目を引くデザインです。</p>
+    <%= image_tag 'fancy_v_shape.jpg', class: 'recommendation-image' %>
+  </div>
+  <div class="recommendation-content">
+    <h2 class="text-large">『 個性派V字 』</h2>
+    <p class="text-medium">個性的で一風変わったデザインです。</p>
+    <%= image_tag 'unique_v_shape.jpg', class: 'recommendation-image' %>
+  </div>
+<% else %>
+  <p>指定されたスタイルのリングはありません。</p>
+<% end %>
