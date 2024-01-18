@@ -14,10 +14,11 @@
   .recommendation-image {
     width: 100%;
     height: auto;
+    margin-top: 10px;
   }
 
   .text-large {
-    margin: 70px auto 30px;
+    margin: 95px auto 30px;
     font-size: 30px;
   }
 
@@ -85,29 +86,37 @@
   <div class="recommendation-content">
     <h2 class="text-large">『 華やかウェーブ 』</h2>
     <p class="text-medium">
-      華やかで目を引くデザインです。 <br>
+      華やかでダイヤがたっぷりとあしらわれているデザインです。ポイントでアクアマリンの誕生石がアレンジされています。手元を見るたびにテンションが上がるデザインです。
     </p>
     <%= image_tag 'fancy_wave.jpg', class: 'recommendation-image' %>
   </div>
   <div class="recommendation-content">
     <h2 class="text-large">『 個性派ウェーブ 』</h2>
-    <p class="text-medium">個性的で一風変わったデザインです。</p>
+    <p class="text-medium">
+      可愛いものが好きな方には目に留まりやすいリボンモチーフのデザインです。さらにプラチナとゴールドの金属が共存しているコンビリングタイプなので、カジュアルさもプラスされています。
+    </p>
     <%= image_tag 'unique_wave.jpg', class: 'recommendation-image' %>
   </div>
 <% when 'v_shape' %>
   <div class="recommendation-content">
     <h2 class="text-large">『 シンプルV字 』</h2>
-    <p class="text-medium">V字スタイルのリングは、ユニークな形状が印象的です。</p>
+    <p class="text-medium">
+      V字のリングは、指長効果があり指をすっきりとシャープに見せてくれます。クールでシンプルなテイストがお好きな方にはピッタリのデザインです。
+    </p>
     <%= image_tag 'simple_v_shape.jpg', class: 'recommendation-image' %>
   </div>
   <div class="recommendation-content">
     <h2 class="text-large">『 華やかV字 』</h2>
-    <p class="text-medium">華やかで目を引くデザインです。</p>
+    <p class="text-medium">
+      ダイヤの装飾がたくさん散りばめられているデザインです。メンズタイプのリングにもダイヤのアレンジが施されているので、男性も少しだけ華やかさをプラスすることができます。
+    </p>
     <%= image_tag 'fancy_v_shape.jpg', class: 'recommendation-image' %>
   </div>
   <div class="recommendation-content">
     <h2 class="text-large">『 個性派V字 』</h2>
-    <p class="text-medium">個性的で一風変わったデザインです。</p>
+    <p class="text-medium">
+      中央でツイストしているような珍しい形状のV字リングです。さらにピンクゴールドの金属に変えることで温かみのある雰囲気にすることができます。人と被りにくデザインがお好きな方にはオススメです。
+    </p>
     <%= image_tag 'unique_v_shape.jpg', class: 'recommendation-image' %>
   </div>
 <% else %>

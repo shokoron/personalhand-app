@@ -36,15 +36,15 @@
   }
 
   h1.straight-type-title {
-    color: #0080ff; /* ストレートタイプの色 */
+    color: #0080ff;
   }
 
   h1.wave-type-title {
-    color: #ff69b4; /* ウェーブタイプの色 */
+    color: #ff69b4;
   }
 
   h1.vshape-type-title {
-    color: #008000; /* V字タイプの色 */
+    color: #008000;
   }
 </style>
 
@@ -56,9 +56,7 @@
     <% when 'straight' %>
       <h1 class="straight-type-title">『 ストレートタイプ 』</h1>
       <p>
-        ストレートタイプの指輪は、新円で丸く癖のない形状をしています。<br>
-        指が長い方や関節が目立つ指の方は、根元にストレートの直線ラインがくることで、<br>
-        関節と指の根元とのバランスがとれて指が綺麗に見えやすいと言われています。
+        ストレートタイプの指輪は、新円で丸く癖のない形状をしています。指が長い方や関節が目立つ指の方は根元にストレートの直線ラインがくることで、関節と指の根元とのバランスがとれて指が綺麗に見えやすいと言われています。
       </p>
       <%= link_to 'おすすめのデザインはこちら', recommended_ring_path('straight'), class: 'btn btn-primary btn-lg rounded-pill my-4' %>
       <%= image_tag("straight_ring.jpg", class: "recommendation-image") %>
@@ -66,9 +64,7 @@
     <% when 'wave' %>
       <h1 class="wave-type-title">『 ウェーブタイプ 』</h1>
       <p>
-        ウェーブタイプの指輪は、左手の薬指の付け根が小指に向かって下るような形状をしています。<br>
-        指にボリュームがある方や、水かきが目立たない方は指の形状にフィットしやすく、<br>
-        より指の形を綺麗に見せてくれます。
+        ウェーブタイプの指輪は、左手の薬指の付け根が小指に向かって下るような形状をしています。指にボリュームがある方や水かきが目立たない方は指の形状にフィットしやすく、より指の形を綺麗に見せてくれます。
       </p>
       <%= link_to 'おすすめのデザインはこちら', recommended_ring_path('wave'), class: 'btn btn-primary btn-lg rounded-pill my-4' %>
       <%= image_tag("wave_ring.jpg", class: "recommendation-image") %>
@@ -76,9 +72,7 @@
     <% when 'v_shape' %>
       <h1 class="vshape-type-title">『 V字タイプ 』</h1>
       <p>
-        V字タイプの指輪は、名前の通りアルファベットのVのような形状をしています。<br>
-        このVのラインは、指の付け根から先までの距離が長く見えるため、指長効果があると言われています。<br>
-        指のボリュームや短さを気にされている方には、指をシャープに見せてくれる効果があります。
+        V字タイプの指輪は、名前の通りアルファベットのVのような形状をしています。このVのラインは、指の付け根から先までの距離が長く見えるため、指長効果があると言われています。指のボリュームや短さを気にされている方には、指をシャープに見せてくれる効果があります。
       </p>
       <%= link_to 'おすすめのデザインはこちら', recommended_ring_path('v_shape'), class: 'btn btn-primary btn-lg rounded-pill my-4' %>
       <%= image_tag("v_shape_ring.jpg", class: "recommendation-image") %>

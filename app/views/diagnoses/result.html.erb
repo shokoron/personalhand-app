@@ -32,15 +32,15 @@
   }
 
   .straight-type-title {
-    color: #0080ff; /* ストレートタイプの色 */
+    color: #0080ff;
   }
 
   .wave-type-title {
-    color: #ff69b4; /* ウェーブタイプの色 */
+    color: #ff69b4;
   }
 
   .vshape-type-title {
-    color: #008000; /* V字タイプの色 */
+    color: #008000;
   }
 
 </style>
@@ -53,9 +53,7 @@
       <p><%= current_user.nickname %>さんに似合うタイプは・・・</p>
       <h1 class="straight-type-title">『 ストレートタイプ 』</h1>
       <p class="left-aligned">
-        ストレートタイプの指輪は、新円で丸く癖のない形状をしています。<br>
-        指が長い方や関節が目立つ指の方は、根元にストレートの直線ラインがくることで、<br>
-        関節と指の根元とのバランスがとれて指が綺麗に見えやすいと言われています。
+        ストレートタイプの指輪は、新円で丸く癖のない形状をしています。指が長い方や関節が目立つ指の方は、根元にストレートの直線ラインがくることで関節と指の根元とのバランスがとれて指が綺麗に見えやすいと言われています。
       </p>
       <%= link_to 'おすすめのデザインはこちら', recommended_ring_path('straight'), class: 'btn btn-primary btn-lg rounded-pill my-4' %>
       <%= image_tag("straight_ring.jpg", class: "recommendation-image") %>
@@ -65,9 +63,7 @@
       <p><%= current_user.nickname %>さんに似合うタイプは・・・</p>
       <h1 class="wave-type-title">『 ウェーブタイプ 』</h1>
       <p class="left-aligned">
-        ウェーブタイプの指輪は、左手の薬指の付け根が小指に向かって下るような形状をしています。<br>
-        指にボリュームがあるのを気にされている方や、水かきが目立たない方は指の形状に<br>
-        フィットしやすく、より指の形を綺麗に見せてくれます。
+        ウェーブタイプの指輪は、左手の薬指の付け根が小指に向かって下るような形状をしています。指にボリュームがあるのを気にされている方や水かきが目立たない方は指の形状にフィットしやすく、より指の形を綺麗に見せてくれます。
       </p>
       <%= link_to 'おすすめのデザインはこちら', recommended_ring_path('wave'), class: 'btn btn-primary btn-lg rounded-pill my-4' %>
       <%= image_tag("wave_ring.jpg", class: "recommendation-image") %>
